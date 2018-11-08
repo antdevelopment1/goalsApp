@@ -92,7 +92,25 @@ class User {
         })
     }
 
+// =============
+    // UPDATE
+// =============
 
+    // Update user
+
+
+
+
+
+
+// =============
+    // DELETE
+// =============
+
+    // Delete new user
+    static deleteById(id) {
+        return db.result(`delete from users where id = $1`, [id])
+    }
 
     
 }
