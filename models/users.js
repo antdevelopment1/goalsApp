@@ -51,6 +51,15 @@ class User {
             })
     }
 
+    // Retrieve user by name
+    static getByName(name) {
+        return db.any(`select * from users where name ilike '%$1:raw%'`, [name])
+            .then(result => {
+                const u = new User(result[0].id, result[0].name, result[0].age, result[0].gender);
+                return u;
+        })
+    }
+
     
 
     
