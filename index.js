@@ -16,3 +16,14 @@ const goals = require('./models/goals');
         })
 
 
+// =============
+   // RETRIEVE
+// =============
+
+    // Retrieve all users function call
+    user.getAllUsers()
+        .then(returnValue => {
+            console.log(`HERE IS A LIST OF ALL THE USERS FROM THE USERS TABLE | ${returnValue}`);
+        })
+
+    
