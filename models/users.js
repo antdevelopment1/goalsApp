@@ -60,8 +60,16 @@ class User {
         })
     }
 
-    
+    // Get user by id
+    static getById(id) {
+        return db.any(`select * from users where id = $1`, [id])
+        .then(result => {
+            const u = new User(result[0].id, result[0].name, result[0].age, result[0].gender);
+            return u;
+        })
+    }
 
+    
     
 }
 
