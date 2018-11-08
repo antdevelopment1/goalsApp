@@ -54,3 +54,20 @@ const goals = require('./models/goals');
 
 
 
+// =============
+    // UPDATE
+// =============
+
+    // Update user
+
+
+
+// ==============
+    // DELETE
+// =============
+
+    // Delete user
+    user.deleteById(9)
+        .then(result => {
+            console.log(result.rowCount);
+        })
