@@ -17,8 +17,27 @@ class User {
         return ` Name: ${this.name.toUpperCase()} | ID: ${this.id} | Gender: ${this.gender} | Age: ${this.age}  `;
     }
 
+// ===========
+   // CREATE
+// ===========
+
+    // Create new user
+    static addNewUser(name, age, gender) {
+        return db.one(`insert into users (name, age, gender) values ($1, $2, $3) returning id, name, age, gender`, [name, age, gender])
+            .then(result => {
+                const u = new User(result.id, name, age, gender);
+                console.log(u);
+                return u;
+            });
+    }
 
 
+
+
+
+
+
+    
 }
 
 
