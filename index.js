@@ -26,4 +26,10 @@ const goals = require('./models/goals');
             console.log(`HERE IS A LIST OF ALL THE USERS FROM THE USERS TABLE | ${returnValue}`);
         })
 
+    // Get user by name
+    user.getByName('Justin Timberlake')
+        .then(name => {
+            console.log(`HERE IS THE USER BASED ON SELECTED NAME | ${name}`);
+        })
+
     
