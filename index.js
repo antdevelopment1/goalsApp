@@ -44,4 +44,13 @@ const goals = require('./models/goals');
             console.log(`HERE IS EVERYONE WITH AN AGE OVER 30:\n ${age}`);
         })
 
-    
+    // Get user by gender
+        user.getAllUsersByGender('female')
+            .then(count => {
+                console.log(`HERE IS THE COUNT FOR THE NUMBER OF USERS THAT ARE MALE OR FEMALE\n ${count}`);
+            })
+
+
+
+
+
