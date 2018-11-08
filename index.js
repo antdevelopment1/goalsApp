@@ -38,4 +38,10 @@ const goals = require('./models/goals');
             console.log(`HERE IS THE USER BASED ON SELECTED ID | ${id}`);
         })
 
+    // Get users with an age greater than 30
+    user.getByAge(30)
+        .then(age => {
+            console.log(`HERE IS EVERYONE WITH AN AGE OVER 30:\n ${age}`);
+        })
+
     
