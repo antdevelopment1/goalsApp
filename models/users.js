@@ -69,6 +69,20 @@ class User {
         })
     }
 
+    // // Get user by age
+    static getByAge(age) {
+        return db.any(`select * from users where age > $1`, [age])
+            .then (result => {
+                let  index = 0;
+                const oldPeople = result.map(user => {
+                   const u = new User(result[index].id, result[index].name, result[index].age, result[index].gender);
+                   index++;
+                   return u;
+                }) 
+                return oldPeople;
+            })
+    }
+
     
     
 }
