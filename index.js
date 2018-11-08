@@ -32,4 +32,10 @@ const goals = require('./models/goals');
             console.log(`HERE IS THE USER BASED ON SELECTED NAME | ${name}`);
         })
 
+    // Get user by id
+    user.getById(2)
+        .then(id => {
+            console.log(`HERE IS THE USER BASED ON SELECTED ID | ${id}`);
+        })
+
     
