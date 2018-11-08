@@ -83,7 +83,17 @@ class User {
             })
     }
 
-    
+    // Gets number of users that are male or female
+    static getAllUsersByGender(gender) {
+        let upperGender = gender.toUpperCase();
+        return db.any(`select count(*) from users where gender = $1`, [upperGender])
+        .then(result => {
+            return result[0].count;
+        })
+    }
+
+
+
     
 }
 
