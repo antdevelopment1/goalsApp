@@ -35,7 +35,23 @@ class User {
 
 
 
+// ================================
+            // RETRIEVE
+// ================================
 
+    // Retrieve all users from user table in database
+    static getAllUsers() {
+         return db.any('select * from users')
+            .then(allUsers => {
+                const modifiedArray = allUsers.map(userObject => {
+                    const u = new User (userObject.id, userObject.name, userObject.age, userObject.gender);
+                    return u;
+                })
+                return modifiedArray;
+            })
+    }
+
+    
 
     
 }
